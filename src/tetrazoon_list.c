@@ -38,7 +38,7 @@ void add_tetrazoon(Tetrazoon_list* tetrazoon_list, Pos3 point1, Pos3 point2, Pos
         tetrazoon_list->capacity = new_capacity;
     }
     //Add new Tetrazoon to list 
-    tetrazoon_list->tetrazoons[tetrazoon_list->tetrazoon_count].tetracytes = malloc((size_t)1 * sizeof(Tetracyte));
+    tetrazoon_list->tetrazoons[tetrazoon_list->tetrazoon_count].tetracytes = malloc((size_t)tetrazoon_list->increment * sizeof(Tetracyte));
     if (!tetrazoon_list->tetrazoons[tetrazoon_list->tetrazoon_count].tetracytes) {
         return;
     }

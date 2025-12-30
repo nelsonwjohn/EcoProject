@@ -35,3 +35,18 @@ float dot_product3(Vec3 vector1, Vec3 vector2)
     return ((vector1.x * vector2.x) + (vector1.y * vector2.y) + (vector1.z * vector2.z));
 }
 
+Pos3 aabb_min(Pos3 point1,Pos3 point2,Pos3 point3,Pos3 point4) {
+    Pos3 min;
+    min.x = fminf(fminf(point1.x, point2.x),fminf(point3.x,point4.x));
+    min.y = fminf(fminf(point1.y, point2.y),fminf(point3.y,point4.y));
+    min.z = fminf(fminf(point1.z, point2.z),fminf(point3.z,point4.z));
+    return min;
+}
+
+Pos3 aabb_max(Pos3 point1,Pos3 point2,Pos3 point3,Pos3 point4) {
+    Pos3 max;
+    max.x = fmaxf(fmaxf(point1.x, point2.x),fmaxf(point3.x,point4.x));
+    max.y = fmaxf(fmaxf(point1.y, point2.y),fmaxf(point3.y,point4.y));
+    max.z = fmaxf(fmaxf(point1.z, point2.z),fmaxf(point3.z,point4.z));
+    return max;
+}
